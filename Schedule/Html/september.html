@@ -1,170 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="bg-gray-100">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule</title>
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        free: '#e6f3ff',
+                        event: '#ffebee',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
+<body class="p-4 max-w-5xl mx-auto">
+    <h1 class="text-3xl font-bold text-center mb-2">My Schedule in this month(September)</h1>
+    <p class="text-xl text-center mb-6">กันยายน September 😢</p>
 
-<body>
-    <div>
-        <center>
-            <h1>What this month?&#128197</h1>
-            <p1>กันยายน September &#128549;</p1>
-        </center>
-    </div>
-    <br>
-    <div>
-        <center>
-            <div>
-                <table>
-                    <tr>
-                        <th>
-                            <h3 id="MON">MON</h3>
-                        </th>
-                        <th>
-                            <h3 id="TUE">TUE</h3>
-                        </th>
-                        <th>
-                            <h3 id="WED">WED</h3>
-                        </th>
-                        <th>
-                            <h3 id="THU">THU</h3>
-                        </th>
-                        <th>
-                            <h3 id="FRI">FRI</h3>
-                        </th>
-                        <th>
-                            <h3 id="SAT">SAT</h3>
-                        </th>
-                        <th>
-                            <h3 id="SUN">SUN</h3>
-                        </th>
-                    </tr>
-            </div>
-            <div>
-                <tr>
-                    <td>
-                        <h2>26.School</h2>
-                    </td>
-                    <td>
-                        <h2>27.School</h2>
-                    </td>
-                    <td>
-                        <h2>28.School</h2>
-                    </td>
-                    <td>
-                        <h2>29.School</h2>
-                    </td>
-                    <td>
-                        <h2>30.BU open house
-                            <br><a href="https://openhouse.bu.ac.th/th#home" target="_blank">ม.กรุงเทพฯ</a></br>
-                        </h2>
-                    </td>
-                    <td>
-                        <h2>31.Free</h2>
-                    </td>
-                    <td>
-                        <h3>1.Free</h3>
-                    </td>
-                </tr>
-            </div>
-            <div>
-                <tr>
-                    <td id="Event">2.Territorial Defense Department <br>(รด.&#128299)</br></td>
-                    <td>3.School <span style="color: red;">TGAT-3</span><br>(พี่เต้เตะบอล&#9917)</br></td>
-                    <td>4.School <span style="color: red;">(A-Level math)</span></td>
-                    <td>5.School <span style="color: red;">(TGAT-1)</span></td>
-                    <td>6.School <span style="color: red;">(A-level science)</span></td>
-                    <td id="Event">
-                        7.openhouse mahidol <br> <button><a href="https://mahidol.ac.th/openhouse/2024/"
-                                target="_blank">มหิดล</a></button> &#127969 </br>
-                    </td>
-                    <td id="Free">
-                        <h3>8.Free</h3>
-                    </td>
-                </tr>
-            </div>
-            <div>
-                <tr>
-                    <td>9.School</td>
-                    <td>10.School <br>(&#128196<a href="https://tcaster.net/mock-m-6/" target="_blank">ผลคะแนนTGAT</a>)
-                        </br></td>
-                    <td>11.School</td>
-                    <td>12.School</td>
-                    <td>13.School</td>
-                    <td id="Free">
-                        <h3>14.Free</h3>
-                    </td>
-                    <td id="Free">
-                        <h3>15.Free</h3>
-                    </td>
-                </tr>
-            </div>
-            <div>
-                <tr>
-                    <td id="Event">16.School&#128196<br>(Examสอบปลายภาค)</td>
-                    <td id="Free">17.Reading a book</td>
-                    <td id="Event">18.School&#128196<br>(Examสอบปลายภาค)</td>
-                    <td id="Free">19.Reading a book</td>
-                    <td id="Event">20.School&#128196<br>(Examสอบปลายภาค)</td>
-                    <td id="Free">
-                        <h3>21.Free</h3>
-                    </td>
-                    <td id="Free">
-                        <h3>22.Free</h3>
-                    </td>
-                </tr>
-            </div>
-            <div>
-                <tr>
-                    <td>23.</td>
-                    <td>24.</td>
-                    <td>25.</td>
-                    <td>26.</td>
-                    <td>27.</td>
-                    <td id="Free">
-                        <h3>28.Free</h3>
-                    </td>
-                    <td id="Free">
-                        <h3>29.Free</h3>
-                    </td>
-                </tr>
-            </div>
-            <div>
-                <tr>
-                    <td id="Event">30.School สอบรด. online(&#128198)</td>
-                    <td>
-                        <h2>1.School</h2>
-                    </td>
-                    <td>
-                        <h2>2.School</h2>
-                    </td>
-                    <td>
-                        <h2>3.School</h2>
-                    </td>
-                    <td>
-                        <h2>4.School</h2>
-                    </td>
-                    <td>
-                        <h2>5.Free</h2>
-                    </td>
-                    <td>
-                        <h2>1.Free</h2>
-                    </td>
-                </tr>
-            </div>
-            </table>
-        </center>
-    </div>
-    <div class="right">
-        <p2 id="Free">Blue = Free</p2>
-        <p2 id="Event">Red = Event</p2>
-       <br> <p2> <span style="background-color: gold;">ทั้งสัปดาห์ที่ 2 ติวTGAT & A-level </span></p2> </br>
-        <p2><span style="color: salmon;">Cr.Micky try hard </p2></span>
+    <table class="w-full border-collapse border border-gray-300 mb-4">
+        <tr class="bg-gray-200">
+            <th class="border border-gray-300 p-2 font-bold">MON</th>
+            <th class="border border-gray-300 p-2 font-bold">TUE</th>
+            <th class="border border-gray-300 p-2 font-bold">WED</th>
+            <th class="border border-gray-300 p-2 font-bold">THU</th>
+            <th class="border border-gray-300 p-2 font-bold">FRI</th>
+            <th class="border border-gray-300 p-2 font-bold">SAT</th>
+            <th class="border border-gray-300 p-2 font-bold">SUN</th>
+        </tr>
+        <tr>
+            <td class="border border-gray-300 p-2 font-semibold">26. School</td>
+            <td class="border border-gray-300 p-2 font-semibold">27. School</td>
+            <td class="border border-gray-300 p-2 font-semibold">28. School</td>
+            <td class="border border-gray-300 p-2">29. School</td>
+            <td class="border border-gray-300 p-2">30. BU open house <br><a href="https://openhouse.bu.ac.th/th#home" class="text-blue-600 hover:underline">ม.กรุงเทพฯ</a></td>
+            <td class="border border-gray-300 p-2 bg-free font-bold">31. Free</td>
+            <td class="border border-gray-300 p-2 bg-free font-bold">1. Free</td>
+        </tr>
+        <tr>
+            <td class="border border-gray-300 p-2 bg-event">2. Territorial Defense Department (รด. 🔫)</td>
+            <td class="border border-gray-300 p-2">3. School <span class="text-red-500">TGAT-3</span> <br>(พี่เต้เตะบอล ⚽)</td>
+            <td class="border border-gray-300 p-2">4. School <span class="text-red-500">(A-Level math)</span></td>
+            <td class="border border-gray-300 p-2">5. School <span class="text-red-500">(TGAT-1)</span></td>
+            <td class="border border-gray-300 p-2">6. School <span class="text-red-500">(A-level science)</span></td>
+            <td class="border border-gray-300 p-2 bg-event"><span class="font-semibold">7. Open house Mahidol 🏠</span><br><a href="https://mahidol.ac.th/openhouse/2024/" class="text-blue-600 hover:underline">มหิดล</a></td>
+            <td class="border border-gray-300 p-2 bg-free font-bold">8. Free</td>
+        </tr>
+        <tr>
+            <td class="border border-gray-300 p-2">9. School</td>
+            <td class="border border-gray-300 p-2">10. School<br><a href="https://tcaster.net/mock-m-6/" class="text-blue-600 hover:underline">ผลคะแนน TGAT 📄</a></td>
+            <td class="border border-gray-300 p-2">11. School</td>
+            <td class="border border-gray-300 p-2">12. School</td>
+            <td class="border border-gray-300 p-2">13. School</td>
+            <td class="border border-gray-300 p-2 bg-free font-bold">14. Free</td>
+            <td class="border border-gray-300 p-2 bg-free font-bold">15. Free</td>
+        </tr>
+        <tr>
+            <td class="border border-gray-300 p-2 bg-event">16. School (สอบปลายภาค 📄)</td>
+            <td class="border border-gray-300 p-2 bg-free font-bold">17. Reading a book</td>
+            <td class="border border-gray-300 p-2 bg-event">18. School (สอบปลายภาค 📄)</td>
+            <td class="border border-gray-300 p-2 bg-free font-bold">19. Reading a book</td>
+            <td class="border border-gray-300 p-2 bg-event">20. School (สอบปลายภาค 📄)</td>
+            <td class="border border-gray-300 p-2 bg-free font-bold">21. Free</td>
+            <td class="border border-gray-300 p-2 bg-free font-bold">22. Free</td>
+        </tr>
+        <tr>
+            <td class="border border-gray-300 p-2">23.</td>
+            <td class="border border-gray-300 p-2">24.</td>
+            <td class="border border-gray-300 p-2">25.</td>
+            <td class="border border-gray-300 p-2">26.</td>
+            <td class="border border-gray-300 p-2">27.</td>
+            <td class="border border-gray-300 p-2 bg-free font-bold">28. Free</td>
+            <td class="border border-gray-300 p-2 bg-free font-bold">29. Free</td>
+        </tr>
+        <tr>
+            <td class="border border-gray-300 p-2 bg-event">30. School สอบรด. online 📅</td>
+            <td class="border border-gray-300 p-2">1. School</td>
+            <td class="border border-gray-300 p-2">2. School</td>
+            <td class="border border-gray-300 p-2">3. School</td>
+            <td class="border border-gray-300 p-2">4. School</td>
+            <td class="border border-gray-300 p-2 bg-free font-bold">5. Free</td>
+            <td class="border border-gray-300 p-2 font-semibold">1. Free</td>
+        </tr>
+    </table>
+
+    <div class="flex justify-center space-x-4">
+        <p class="bg-free px-2 py-1 rounded">Blue = Free</p>
+        <p class="bg-event px-2 py-1 rounded">Red = Event</p>
     </div>
 </body>
-
 </html>
