@@ -1,122 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="bg-gray-100">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule</title>
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        free: '#e6f3ff',
+                        event: '#ffebee',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
+<body class="p-4 max-w-5xl mx-auto">
+    <h1 class="text-3xl font-bold text-center mb-2">My Schedule in this month(Aug)</h1>
+    <p class="text-xl text-center mb-6">สิงหาคม August &#128064;</p>
 
-<body>
-    <center>
-        <h1>My Schedule in this month(Aug)</h1>
-        <p1>สิงหาคม August &#128064;</p1>
-    </center>
-    <center>
-        <table>
-            <tr>
-                <th>
-                    <h3 id="MON">MON</h3>
-                </th>
-                <th>
-                    <h3 id="TUE">TUE</h3>
-                </th>
-                <th>
-                    <h3 id="WED">WED</h3>
-                </th>
-                <th>
-                    <h3 id="THU">THU</h3>
-                </th>
-                <th>
-                    <h3 id="FRI">FRI</h3>
-                </th>
-                <th>
-                    <h3 id="SAT">SAT</h3>
-                </th>
-                <th>
-                    <h3 id="SUN">SUN</h3>
-                </th>
-            </tr>
-            <tr>
-                <td>
-                    <h2>29.วันหยุดชดเชย วันพระบรมราชสมภพ</h2>
-                </td>
-                <td>
-                    <h2>30.School</h2>
-                </td>
-                <td>
-                    <h2>31.School</h2>
-                </td>
-                <td>1.School</td>
-                <td>2.School</td>
-                <td id="Free">
-                    <h3 id="Free">3.Free</h3>
-                </td>
-                <td id="Free">
-                    <h3>4.Free</h3>
-                </td>
-            </tr>
-            <tr>
-                <td>5.School</td>
-                <td>6.School</td>
-                <td>7.School</td>
-                <td>8.School</td>
-                <td>9.School</td>
-                <td id="Event">
-                    <h4>10.Bocchi the rock re:part1 &#127928</h4> 12Am At Paragon Cineplex
-                </td>
-                <td id="Free">
-                    <h3>18.Free</h3>
-                </td>
-            </tr>
-            <tr>
-                <td id="Free">
-                    <h3>12.วันแม่</h3>
-                </td>
-                <td>13.School</td>
-                <td>14.School</td>
-                <td>15.School</td>
-                <td>16.School</td>
-                <td id="Free">
-                    <h3>17.Free</h3>
-                </td>
-                <td id="Free">
-                    <h3>18.Free</h3>
-                </td>
-            </tr>
-            <tr>
-                <td id="Free">19.School</td>
-                <td>20.School</td>
-                <td>21.School</td>
-                <td>22.School</td>
-                <td>23.School</td>
-                <td id="Free">
-                    <h3>24.Free</h3>
-                </td>
-                <td id="Free">
-                    <h3>25.Free</h3>
-                </td>
-            </tr>
-            <tr>
-                <td id="Free">26.School</td>
-                <td>27.School</td>
-                <td>28.School</td>
-                <td>29.School</td>
-                <td id="Event">30.BU open house
-                    <br><a href="https://openhouse.bu.ac.th/th#home">ม.กรุงเทพฯ</a> <br>
-                </td>
-                <td id="Free">
-                    <h3>31.Free</h3>
-                </td>
-                <td>
-                    <h2>1.Free</h2>
-                </td>
-            </tr>
-        </table>
-    </center>
-    <p2 id="Free">Blue = Free</p2>
-    <p2 id="Event">Red = Event</p2>
+    <table class="w-full border-collapse border border-gray-300 mb-4">
+        <tr class="bg-gray-200">
+            <th class="border border-gray-300 p-2 font-bold">MON</th>
+            <th class="border border-gray-300 p-2 font-bold">TUE</th>
+            <th class="border border-gray-300 p-2 font-bold">WED</th>
+            <th class="border border-gray-300 p-2 font-bold">THU</th>
+            <th class="border border-gray-300 p-2 font-bold">FRI</th>
+            <th class="border border-gray-300 p-2 font-bold">SAT</th>
+            <th class="border border-gray-300 p-2 font-bold">SUN</th>
+        </tr>
+        <tr>
+            <td class="border border-gray-300 p-2 font-semibold">29.วันหยุดชดเชย วันพระบรมราชสมภพ</td>
+            <td class="border border-gray-300 p-2 font-semibold">30.School</td>
+            <td class="border border-gray-300 p-2 font-semibold">31.School</td>
+            <td class="border border-gray-300 p-2">1.School</td>
+            <td class="border border-gray-300 p-2">2.School</td>
+            <td class="border border-gray-300 p-2 bg-free font-bold">3.Free</td>
+            <td class="border border-gray-300 p-2 bg-free font-bold">4.Free</td>
+        </tr>
+        <tr>
+            <td class="border border-gray-300 p-2">5.School</td>
+            <td class="border border-gray-300 p-2">6.School</td>
+            <td class="border border-gray-300 p-2">7.School</td>
+            <td class="border border-gray-300 p-2">8.School</td>
+            <td class="border border-gray-300 p-2">9.School</td>
+            <td class="border border-gray-300 p-2 bg-event"><span class="font-semibold">10.Bocchi the rock re:part1 &#127928;</span><br>12Am At Paragon Cineplex</td>
+            <td class="border border-gray-300 p-2 bg-free font-bold">11.Free</td>
+        </tr>
+        <tr>
+            <td class="border border-gray-300 p-2 bg-free font-bold">12.วันแม่</td>
+            <td class="border border-gray-300 p-2">13.School</td>
+            <td class="border border-gray-300 p-2">14.School</td>
+            <td class="border border-gray-300 p-2">15.School</td>
+            <td class="border border-gray-300 p-2">16.School</td>
+            <td class="border border-gray-300 p-2 bg-free font-bold">17.Free</td>
+            <td class="border border-gray-300 p-2 bg-free font-bold">18.Free</td>
+        </tr>
+        <tr>
+            <td class="border border-gray-300 p-2">19.School</td>
+            <td class="border border-gray-300 p-2">20.School</td>
+            <td class="border border-gray-300 p-2">21.School</td>
+            <td class="border border-gray-300 p-2">22.School</td>
+            <td class="border border-gray-300 p-2">23.School</td>
+            <td class="border border-gray-300 p-2 bg-free font-bold">24.Free</td>
+            <td class="border border-gray-300 p-2 bg-free font-bold">25.Free</td>
+        </tr>
+        <tr>
+            <td class="border border-gray-300 p-2">26.School</td>
+            <td class="border border-gray-300 p-2">27.School</td>
+            <td class="border border-gray-300 p-2">28.School</td>
+            <td class="border border-gray-300 p-2">29.School</td>
+            <td class="border border-gray-300 p-2 bg-event">30.BU open house<br><a href="https://openhouse.bu.ac.th/th#home" class="text-blue-600 hover:underline">ม.กรุงเทพฯ</a></td>
+            <td class="border border-gray-300 p-2 bg-free font-bold">31.Free</td>
+            <td class="border border-gray-300 p-2 font-semibold">1.Free</td>
+        </tr>
+    </table>
+
+    <div class="flex justify-center space-x-4">
+        <p class="bg-free px-2 py-1 rounded">Blue = Free</p>
+        <p class="bg-event px-2 py-1 rounded">Red = Event</p>
+    </div>
 </body>
-
 </html>
