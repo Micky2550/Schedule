@@ -3,74 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schedule HTML Files</title>
+    <title>Schedule Listing</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 min-h-screen">
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
     <div class="container mx-auto px-4 py-8">
-        <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Schedule HTML Files</h1>
-        <div id="monthContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        <h1 class="text-3xl font-bold text-center mb-8 text-gray-800">Schedule Listing</h1>
+        <div id="schedule-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Schedule items will be dynamically added here -->
+        </div>
     </div>
 
     <script>
-        const baseUrl = 'https://api.github.com/repos/micky2550/Schedule/contents/Schedule/Html';
-        const months = [
-            'January', 'February', 'March', 'April', 'May', 'June',
-            'July', 'August', 'September', 'October', 'November', 'December'
-        ];
-
-        function createMonthCard(month, files) {
-            const card = document.createElement('div');
-            card.className = 'bg-white rounded-lg shadow-md overflow-hidden';
-            
-            const header = document.createElement('h2');
-            header.className = 'text-xl font-semibold bg-blue-500 text-white p-4';
-            header.textContent = month;
-            
-            const list = document.createElement('ul');
-            list.className = 'divide-y divide-gray-200';
-            
-            files.forEach(file => {
-                const item = document.createElement('li');
-                item.className = 'p-4 hover:bg-gray-50 transition-colors duration-150';
-                
-                const link = document.createElement('a');
-                link.href = `https://micky2550.github.io/Schedule/Schedule/Html/${file}`;
-                link.className = 'text-blue-600 hover:text-blue-800 hover:underline';
-                link.textContent = file;
-                
-                item.appendChild(link);
-                list.appendChild(item);
-            });
-            
-            card.appendChild(header);
-            card.appendChild(list);
-            return card;
+        async function fetchScheduleFiles() {
+            const baseUrl = 'https://api.github.com/repos/micky2550/Schedule/contents/Schedule/Html';
+            try {
+                const response = await fetch(baseUrl);
+                const data = await response.json();
+                return data.filter(item => item.name.toLowerCase().endsWith('.html'));
+            } catch (error) {
+                console.error('Error fetching schedule files:', error);
+                return [];
+            }
         }
 
-        fetch(baseUrl)
-            .then(response => response.json())
-            .then(data => {
-                const monthContainer = document.getElementById('monthContainer');
-                const filesByMonth = {};
+        function formatFileName(fileName) {
+            return fileName.replace('.html', '').replace(/\b\w/g, c => c.toUpperCase());
+        }
 
-                data.forEach(file => {
-                    if (file.name.endsWith('.html')) {
-                        const [year, month] = file.name.split('-');
-                        const monthName = months[parseInt(month) - 1];
-                        if (!filesByMonth[monthName]) {
-                            filesByMonth[monthName] = [];
-                        }
-                        filesByMonth[monthName].push(file.name);
-                    }
-                });
+        function createScheduleItem(file) {
+            const monthName = formatFileName(file.name);
+            const listItem = document.createElement('a');
+            listItem.href = `https://micky2550.github.io/Schedule/Schedule/Html/${file.name}`;
+            listItem.className = 'bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300 flex items-center justify-between';
+            listItem.innerHTML = `
+                <span class="text-lg font-semibold text-gray-800">${monthName}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            `;
+            return listItem;
+        }
 
-                Object.entries(filesByMonth).forEach(([month, files]) => {
-                    const card = createMonthCard(month, files);
-                    monthContainer.appendChild(card);
-                });
-            })
-            .catch(error => console.error('Error fetching file list:', error));
+        async function displayScheduleList() {
+            const scheduleList = document.getElementById('schedule-list');
+            const files = await fetchScheduleFiles();
+
+            if (files.length === 0) {
+                scheduleList.innerHTML = '<p class="text-center text-gray-600 col-span-full">No schedule files found.</p>';
+                return;
+            }
+
+            files.forEach(file => {
+                const item = createScheduleItem(file);
+                scheduleList.appendChild(item);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', displayScheduleList);
     </script>
 </body>
 </html>
