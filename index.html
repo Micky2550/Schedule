@@ -34,7 +34,7 @@
         function createScheduleItem(file) {
             const monthName = formatFileName(file.name);
             const listItem = document.createElement('a');
-            listItem.href = `https://micky2550.github.io/Schedule/Schedule/Html/${file.name}`;
+            listItem.href = `./Schedule/Html/${file.name}`;
             listItem.className = 'bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300 flex items-center justify-between';
             listItem.innerHTML = `
                 <span class="text-lg font-semibold text-gray-800">${monthName}</span>
