@@ -1,0 +1,116 @@
+        h1 {
+            font-size: 200%;
+            background-color: #00BFFF;
+            border-style: solid;
+            border-radius: 12px;
+            border-color: darkblue;
+        }
+
+        p1 {
+            font-size: 130%;
+            color: #000000;
+            background: #00BFFF;
+            border-radius: 8px;
+            padding: 5px;
+            border-style: outset;
+        }
+
+        p2 {
+            font-size: 30px;
+        }
+
+        h2 {
+            color: gainsboro;
+            background-color: ghostwhite;
+            font-size: 12px;
+        }
+
+        h3 {
+            font-size: 15px;
+        }
+
+        h5 {
+            font-size: 50px;
+        }
+
+        table,
+        th,
+        td {
+            border: 3.5px solid;
+            color: cornflowerblue;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 95%;
+        }
+
+        th {
+            border: 1px solid #b4b4b4dd;
+            text-align: center;
+            padding: 10px;
+            background-color: black;
+        }
+
+        td {
+            border: 1px solid #b4b4b4dd;
+            text-align: left;
+            padding: 30px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #e4e4e4dd;
+        }
+
+        #Event {
+            color: black;
+            background: red;
+        }
+
+        #MON {
+            color: yellow;
+        }
+
+        #TUE {
+            color: pink;
+        }
+
+        #WED {
+            color: greenyellow;
+        }
+
+        #THU {
+            color: orange;
+        }
+
+        #FRI {
+            color: lightskyblue;
+        }
+
+        #SAT {
+            color: darkviolet;
+        }
+
+        #SUN {
+            color: red;
+        }
+
+        #Free {
+            color: darkblue;
+            background-color: aqua;
+        }
+
+        button {
+            background-color: royalblue;
+            border-radius: 10px;
+        }
+
+        .right {
+            position: absolute;
+            right: 50px;
+            width: 500px;
+            border: 3px solid #73AD21;
+            padding: 10px;
+        }
+        
