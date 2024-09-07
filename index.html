@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule HTML Files</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Schedule HTML Files</h1>
+        <div id="monthContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+
+    <script>
+        const baseUrl = 'https://api.github.com/repos/micky2550/Schedule/contents/Schedule/Html';
+        const months = [
+            'January', 'February', 'March', 'April', 'May', 'June',
+            'July', 'August', 'September', 'October', 'November', 'December'
+        ];
+
+        function createMonthCard(month, files) {
+            const card = document.createElement('div');
+            card.className = 'bg-white rounded-lg shadow-md overflow-hidden';
+            
+            const header = document.createElement('h2');
+            header.className = 'text-xl font-semibold bg-blue-500 text-white p-4';
+            header.textContent = month;
+            
+            const list = document.createElement('ul');
+            list.className = 'divide-y divide-gray-200';
+            
+            files.forEach(file => {
+                const item = document.createElement('li');
+                item.className = 'p-4 hover:bg-gray-50 transition-colors duration-150';
+                
+                const link = document.createElement('a');
+                link.href = `https://micky2550.github.io/Schedule/Html/${file}`;
+                link.className = 'text-blue-600 hover:text-blue-800 hover:underline';
+                link.textContent = file;
+                
+                item.appendChild(link);
+                list.appendChild(item);
+            });
+            
+            card.appendChild(header);
+            card.appendChild(list);
+            return card;
+        }
+
+        fetch(baseUrl)
+            .then(response => response.json())
+            .then(data => {
+                const monthContainer = document.getElementById('monthContainer');
+                const filesByMonth = {};
+
+                data.forEach(file => {
+                    if (file.name.endsWith('.html')) {
+                        const [year, month] = file.name.split('-');
+                        const monthName = months[parseInt(month) - 1];
+                        if (!filesByMonth[monthName]) {
+                            filesByMonth[monthName] = [];
+                        }
+                        filesByMonth[monthName].push(file.name);
+                    }
+                });
+
+                Object.entries(filesByMonth).forEach(([month, files]) => {
+                    const card = createMonthCard(month, files);
+                    monthContainer.appendChild(card);
+                });
+            })
+            .catch(error => console.error('Error fetching file list:', error));
+    </script>
+</body>
+</html>
